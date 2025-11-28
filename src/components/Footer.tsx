@@ -22,22 +22,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
           {/* Center Column: Creative Lane Badge */}
           <div className="flex items-center justify-center">
             <a
-              href="https://creativelane.com.br"
+              href="https://creativelane.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-center w-32 h-32"
+              className="group relative flex items-center justify-center w-16 h-16"
               aria-label="Creative Lane"
             >
               {/* Rotating circular text */}
               <div className="absolute inset-0 animate-spin-slow">
-                <svg viewBox="0 0 128 128" className="w-full h-full">
+                <svg viewBox="0 0 100 100" className="w-full h-full">
                   <defs>
                     <path
                       id="circlePath"
-                      d="M 64, 64 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
+                      d="M 50, 50 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"
                     />
                   </defs>
-                  <text className="text-[9px] fill-stone-600 uppercase tracking-[0.3em] font-medium">
+                  <text className="text-[7px] fill-stone-600 uppercase tracking-[0.25em] font-medium">
                     <textPath href="#circlePath" startOffset="0%">
                       ASSESSORADO POR • CREATIVE LANE •
                     </textPath>
@@ -46,11 +46,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
               </div>
 
               {/* Center logo */}
-              <div className="relative z-10 w-10 h-10 flex items-center justify-center">
+              <div className="relative z-10 w-8 h-8 flex items-center justify-center">
                 <img
                   src={creativeLaneLogo}
                   alt="Creative Lane"
-                  className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                  className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-800"
                 />
               </div>
             </a>

@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-stone-50 flex flex-col relative">
       {/* Noise Texture Overlay for Premium Feel */}
       <div className="bg-noise"></div>
-      
+
       <main className="flex-grow relative z-0">
         <Hero />
         <Symptoms />
@@ -29,10 +29,10 @@ const App: React.FC = () => {
       </main>
       <Footer onOpenPrivacy={() => setIsPrivacyOpen(true)} />
       <FloatingChat />
-      
-      <PrivacyPolicyModal 
-        isOpen={isPrivacyOpen} 
-        onClose={() => setIsPrivacyOpen(false)} 
+
+      <PrivacyPolicyModal
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
       />
     </div>
   );
