@@ -1,6 +1,7 @@
 import React from 'react';
 import { BatteryWarning, BrainCircuit, Frown, Coffee } from 'lucide-react';
 import { SectionFade } from './SectionFade';
+import { SectionHeader } from './SectionHeader';
 
 const symptoms = [
   {
@@ -27,29 +28,20 @@ const symptoms = [
 
 export const Symptoms: React.FC = () => {
   return (
-    <section id="sintomas" className="py-32 bg-white relative overflow-hidden">
+    <section id="sintomas" className="section-shell bg-white/70 relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-stone-200 to-transparent"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="section-container relative z-10">
         <SectionFade>
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-dark mb-8 leading-tight">
-              Você sente que, apesar de tudo, <br/>
-              <span className="text-brand-primary italic font-light relative inline-block">
-                algo ainda falta?
-                <svg className="absolute w-full h-2 bottom-0 left-0 text-brand-primary/20" viewBox="0 0 100 10" preserveAspectRatio="none">
-                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                </svg>
-              </span>
-            </h2>
-            <p className="text-brand-slate text-lg font-light leading-relaxed max-w-xl mx-auto">
-              Muitas vezes o corpo pede pausa e a alma pede sentido, mas continuamos no automático. Identificar a origem do desconforto é o primeiro passo.
-            </p>
-          </div>
+          <SectionHeader
+            className="mb-20"
+            title="Você sente que, apesar de tudo, algo ainda falta?"
+            subtitle="Muitas vezes o corpo pede pausa e a alma pede sentido, mas continuamos no automático. Identificar a origem do desconforto é o primeiro passo."
+          />
         </SectionFade>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {symptoms.map((item, index) => (
             <SectionFade key={index} delay={index * 100} className="h-full">
               <div className="group relative bg-brand-light/30 p-8 rounded-[2rem] hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 h-full border border-stone-100 hover:border-brand-primary/20 overflow-hidden">

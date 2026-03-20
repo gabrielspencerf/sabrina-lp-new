@@ -5,9 +5,9 @@ import { Quote, GraduationCap, BookOpen } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-24 bg-brand-light relative">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section id="sobre" className="section-shell bg-brand-light/80 relative">
+      <div className="section-container">
+        <div className="surface-soft p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-14">
 
           <div className="w-full lg:w-5/12 relative order-2 lg:order-1">
             <SectionFade>
@@ -17,8 +17,10 @@ export const About: React.FC = () => {
                   <img
                     src={aboutImage}
                     alt="Sabrina Gonzalez, Psicóloga"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out sepia-[0.15]"
+                    className="protected-media w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out sepia-[0.15]"
                     loading="lazy"
+                    draggable={false}
+                    onContextMenu={(event) => event.preventDefault()}
                   />
                 </div>
                 {/* Floating card */}

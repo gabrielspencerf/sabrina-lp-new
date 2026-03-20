@@ -7,8 +7,8 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
   return (
-    <footer className="bg-brand-dark py-12 px-6 border-t border-stone-800">
-      <div className="container mx-auto max-w-6xl">
+    <footer className="bg-brand-dark py-14 md:py-16 border-t border-stone-800">
+      <div className="section-container">
 
         {/* Main Footer Content - Grid Layout on Desktop, Stacked on Mobile */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
           {/* Left Column: Brand Identity */}
           <div className="space-y-2 text-center">
             <h4 className="font-serif text-stone-200 text-2xl tracking-wide">Sabrina Gonzalez</h4>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-brand-primary font-medium">Psicologia Clínica</p>
+            <p className="text-xs tracking-[0.22em] uppercase text-brand-primary font-medium">Psicologia Clínica</p>
           </div>
 
           {/* Center Column: Creative Lane Badge */}
@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
                       d="M 50, 50 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"
                     />
                   </defs>
-                  <text className="text-[7px] fill-stone-600 uppercase tracking-[0.25em] font-medium">
+                  <text className="text-[8px] fill-stone-600 uppercase tracking-[0.2em] font-medium">
                     <textPath href="#circlePath" startOffset="0%">
                       ASSESSORADO POR • CREATIVE LANE •
                     </textPath>
@@ -50,7 +50,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
                 <img
                   src={creativeLaneLogo}
                   alt="Creative Lane"
-                  className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-800"
+                  className="protected-media w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-800"
+                  loading="lazy"
+                  draggable={false}
+                  onContextMenu={(event) => event.preventDefault()}
                 />
               </div>
             </a>
@@ -71,11 +74,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy }) => {
 
         {/* Bottom Section: Copyright & Legal */}
         <div className="max-w-3xl mx-auto space-y-4 pt-8 mt-8 border-t border-stone-800/40 text-center">
-          <p className="text-[10px] text-stone-600 uppercase tracking-widest">
+          <p className="text-xs text-stone-600 uppercase tracking-[0.18em]">
             © {new Date().getFullYear()} Sabrina Gonzalez. Todos os direitos reservados.
           </p>
 
-          <p className="text-[10px] text-stone-700 leading-relaxed">
+          <p className="text-xs text-stone-700 leading-relaxed">
             Este site tem caráter informativo e não substitui avaliação profissional.<br className="hidden sm:block" />
             Em caso de emergência ou risco à vida, ligue 188 (CVV) ou procure um hospital.
           </p>

@@ -9,12 +9,16 @@ import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 import { FloatingChat } from './components/FloatingChat';
 import { PrivacyPolicyModal } from './components/PrivacyPolicyModal';
+import { GoogleTagManager } from './components/GoogleTagManager';
+import { useImageProtection } from './hooks/useImageProtection';
 
 const App: React.FC = () => {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  useImageProtection();
 
   return (
     <div className="min-h-screen bg-stone-50 flex flex-col relative">
+      <GoogleTagManager />
       {/* Noise Texture Overlay for Premium Feel */}
       <div className="bg-noise"></div>
 

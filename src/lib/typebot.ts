@@ -1,4 +1,4 @@
-import { ENV_CONFIG } from '../constants';
+import { APP_CONFIG } from '../config/appConfig';
 
 let isLoaded = false;
 
@@ -11,8 +11,8 @@ export const loadTypebot = () => {
     import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
     
     Typebot.initBubble({
-      typebot: "${ENV_CONFIG.TYPEBOT_ID}",
-      apiHost: "${ENV_CONFIG.TYPEBOT_API_HOST}",
+      typebot: "${APP_CONFIG.typebotId}",
+      apiHost: "${APP_CONFIG.typebotApiHost}",
       theme: {
         button: { backgroundColor: "#1c1917" }, // stone-900
         previewMessage: { backgroundColor: "#f4f2ed", textColor: "#1c1917" }
@@ -27,9 +27,7 @@ export const loadTypebot = () => {
 };
 
 export const openTypebot = () => {
-  // @ts-ignore - Typebot is loaded dynamically
   if (window.Typebot) {
-    // @ts-ignore
     window.Typebot.open();
   }
 };

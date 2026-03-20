@@ -6,11 +6,11 @@ import { Compass, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const CTA: React.FC = () => {
   return (
-    <section className="py-24 md:py-32 bg-brand-light text-center px-6 relative overflow-hidden">
+    <section className="section-shell-tight bg-brand-light text-center relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/50 rounded-full blur-[100px] pointer-events-none -z-0"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] md:w-[800px] md:h-[800px] bg-white/50 rounded-full blur-[100px] pointer-events-none -z-0"></div>
 
-      <div className="container mx-auto max-w-5xl relative z-10">
+      <div className="section-container max-w-5xl relative z-10">
         <SectionFade>
 
           {/* Header Block */}
@@ -28,7 +28,7 @@ export const CTA: React.FC = () => {
           </div>
 
           {/* White Card Container */}
-          <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl shadow-stone-200/40 border border-white/80 mb-12">
+          <div className="bg-white rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 shadow-xl shadow-stone-200/40 border border-white/80 mb-12">
             <div className="grid md:grid-cols-2 gap-10 md:gap-16 text-left">
 
               {/* Item 1 */}
@@ -62,11 +62,11 @@ export const CTA: React.FC = () => {
 
           {/* Action Block */}
           <div className="flex flex-col items-center gap-6">
-            <Button onClick={openTypebot} variant="primary" className="text-base md:text-lg px-10 py-5 shadow-2xl shadow-stone-900/10 rounded-full group">
+            <Button onClick={openTypebot} variant="primary" className="text-base md:text-lg px-8 sm:px-10 py-4 sm:py-5 shadow-2xl shadow-stone-900/10 rounded-full group w-full sm:w-auto">
               QUERO INICIAR MEU PROCESSO
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <p className="text-[10px] uppercase tracking-widest text-stone-400 font-medium">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">
               Atendimento Particular • Compromisso com Resultado
             </p>
           </div>

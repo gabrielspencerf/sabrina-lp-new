@@ -7,10 +7,36 @@
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background:
+      radial-gradient(1200px 700px at 10% -5%, rgba(180, 150, 104, 0.1), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(255, 255, 255, 0.75), transparent 65%),
+      #f4f2ed;
+  }
+
+  .protected-media {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-touch-callout: none;
   }
 }
 
 @layer components {
+  .section-shell {
+    @apply py-24 md:py-28 lg:py-32;
+  }
+
+  .section-shell-tight {
+    @apply py-20 md:py-24;
+  }
+
+  .section-container {
+    @apply container mx-auto px-6 md:px-8 lg:px-10 max-w-6xl;
+  }
+
+  .surface-soft {
+    @apply rounded-[2.5rem] border border-white/60 bg-white/80 backdrop-blur-sm shadow-[0_20px_60px_-40px_rgba(28,25,23,0.45)];
+  }
+
   /* Noise Texture Overlay */
   .bg-noise {
     position: fixed;
@@ -27,13 +53,21 @@
   /* Fade Section Utility */
   .fade-in-section {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(28px);
     transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
   .fade-in-section.is-visible {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

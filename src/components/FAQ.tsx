@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SectionFade } from './SectionFade';
 import { Plus, Minus } from 'lucide-react';
+import { SectionHeader } from './SectionHeader';
 
 const faqs = [
   {
@@ -25,15 +26,13 @@ export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-brand-light border-t border-stone-200">
-      <div className="container mx-auto px-6 max-w-3xl">
+    <section id="faq" className="section-shell-tight bg-brand-light/85 border-t border-stone-200">
+      <div className="section-container max-w-3xl">
         <SectionFade>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-brand-dark mb-4">Dúvidas Frequentes</h2>
-            <p className="text-brand-slate font-light">
-              Esclareça questões comuns sobre o processo.
-            </p>
-          </div>
+          <SectionHeader
+            title="Dúvidas Frequentes"
+            subtitle="Esclareça questões comuns sobre o processo."
+          />
         </SectionFade>
 
         <div className="space-y-4">
@@ -44,7 +43,9 @@ export const FAQ: React.FC = () => {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none"
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <span className={`font-serif text-lg ${openIndex === index ? 'text-brand-primary' : 'text-brand-dark'}`}>
                     {faq.question}
@@ -54,10 +55,15 @@ export const FAQ: React.FC = () => {
                   </span>
                 </button>
                 
-                <div 
-                  className={`px-6 text-brand-slate font-light leading-relaxed overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-48 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                <div
+                  id={`faq-answer-${index}`}
+                  className={`grid transition-all duration-300 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
-                  {faq.answer}
+                  <div className="overflow-hidden">
+                    <div className="px-5 md:px-6 pb-5 md:pb-6 text-brand-slate font-light leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </div>
                 </div>
               </div>
             </SectionFade>

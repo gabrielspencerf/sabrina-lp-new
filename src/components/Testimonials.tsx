@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionFade } from './SectionFade';
 import { Quote } from 'lucide-react';
+import { SectionHeader } from './SectionHeader';
 
 const cases = [
   {
@@ -22,16 +23,16 @@ const cases = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-32 bg-white">
-      <div className="container mx-auto px-6 text-center">
+    <section className="section-shell bg-white/75">
+      <div className="section-container text-center">
         <SectionFade>
-          <h2 className="text-4xl font-serif text-brand-dark mb-4">Histórias de Transformação</h2>
-          <p className="text-brand-slate uppercase tracking-widest text-xs mb-16">
-            Casos reais ilustrativos (Identidades preservadas)
-          </p>
+          <SectionHeader
+            title="Histórias de Transformação"
+            subtitle="Casos reais ilustrativos (Identidades preservadas)"
+          />
         </SectionFade>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {cases.map((c, i) => (
             <SectionFade key={i} delay={i * 100} className="h-full">
               <div className="p-8 text-left h-full flex flex-col items-start border-l border-brand-light hover:border-brand-primary transition-colors duration-300 bg-stone-50/50 rounded-r-3xl">

@@ -22,11 +22,11 @@ const steps = [
 
 export const Methodology: React.FC = () => {
   return (
-    <section id="metodo" className="py-32 bg-brand-dark text-stone-100 relative overflow-hidden">
+    <section id="metodo" className="section-shell bg-brand-dark text-stone-100 relative overflow-hidden">
       {/* Background radial gradient */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[320px] h-[320px] md:w-[500px] md:h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="section-container relative z-10">
         <SectionFade>
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10 border-b border-stone-800 pb-12">
              <div className="max-w-2xl">
@@ -44,14 +44,14 @@ export const Methodology: React.FC = () => {
           </div>
         </SectionFade>
 
-        <div className="grid md:grid-cols-3 gap-12 relative">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-12 relative">
           
           {/* Connector Line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-stone-800 via-brand-primary/30 to-stone-800 z-0"></div>
 
           {steps.map((step, index) => (
             <SectionFade key={index} delay={index * 200} className="relative z-10">
-              <div className="bg-stone-900 p-10 rounded-[2.5rem] hover:bg-stone-800/80 transition-all duration-500 h-full group border border-stone-800 hover:border-brand-primary/30 hover:-translate-y-2 shadow-2xl shadow-black/20 flex flex-col">
+              <div className="bg-stone-900 p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] hover:bg-stone-800/80 transition-all duration-500 h-full group border border-stone-800 hover:border-brand-primary/30 hover:-translate-y-2 shadow-2xl shadow-black/20 flex flex-col">
                 <div className="flex justify-between items-start mb-10">
                   <div className="w-14 h-14 bg-stone-950 rounded-2xl flex items-center justify-center text-brand-primary font-serif font-bold text-xl border border-stone-800 shadow-inner group-hover:scale-110 transition-transform duration-500 relative shrink-0">
                      {/* Icon Overlay */}
