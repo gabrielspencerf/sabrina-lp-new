@@ -1,8 +1,8 @@
 const DEFAULTS = {
   typebotTag: "v1",
-  typebotId: "sabrinagonzalezexterior",
+  typebotId: "sabrina",
   typebotApiHost: "https://flow.creativelane.com.br",
-  gtmId: "GTM-W6LCKXWW",
+  gtmId: "GTMKTV4W9H6",
 } as const;
 
 export const APP_CONFIG = {
