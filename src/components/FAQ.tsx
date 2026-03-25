@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { SectionFade } from './SectionFade';
 import { Plus, Minus } from 'lucide-react';
 import { SectionHeader } from './SectionHeader';
+import { Button } from './Button';
+import { openTypebot } from '../lib/typebot';
 
 const faqs = [
   {
@@ -43,7 +45,7 @@ export const FAQ: React.FC = () => {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/50"
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
@@ -57,11 +59,17 @@ export const FAQ: React.FC = () => {
                 
                 <div
                   id={`faq-answer-${index}`}
+                  aria-hidden={openIndex !== index}
                   className={`grid transition-all duration-300 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
                     <div className="px-5 md:px-6 pb-5 md:pb-6 text-brand-slate font-light leading-relaxed">
                       {faq.answer}
+                      <div className="pt-4">
+                        <Button onClick={openTypebot} variant="secondary" className="w-full sm:w-auto">
+                          Quero agendar minha sessão
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

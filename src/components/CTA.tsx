@@ -6,7 +6,7 @@ import { Compass, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const CTA: React.FC = () => {
   return (
-    <section className="section-shell-tight bg-brand-light text-center relative overflow-hidden">
+    <section id="agendar" className="section-shell-tight bg-brand-light text-center relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] md:w-[800px] md:h-[800px] bg-white/50 rounded-full blur-[100px] pointer-events-none -z-0"></div>
 
@@ -14,7 +14,7 @@ export const CTA: React.FC = () => {
         <SectionFade>
 
           {/* Header Block */}
-          <div className="mb-16">
+          <div className="mb-14">
             <span className="text-brand-primary font-bold tracking-[0.2em] text-xs uppercase mb-6 block">
               Tese Central
             </span>
@@ -61,11 +61,17 @@ export const CTA: React.FC = () => {
           </div>
 
           {/* Action Block */}
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-4">
             <Button onClick={openTypebot} variant="primary" className="text-base md:text-lg px-8 sm:px-10 py-4 sm:py-5 shadow-2xl shadow-stone-900/10 rounded-full group w-full sm:w-auto">
-              QUERO INICIAR MEU PROCESSO
+              AGENDAR SESSÃO ONLINE
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+            <Button href="#faq" variant="outline" className="w-full sm:w-auto">
+              Quero revisar as dúvidas primeiro
+            </Button>
+            <p className="text-sm text-brand-slate font-medium">
+              Atendimento online • 50 minutos • Sigilo profissional
+            </p>
             <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">
               Atendimento Particular • Compromisso com Resultado
             </p>

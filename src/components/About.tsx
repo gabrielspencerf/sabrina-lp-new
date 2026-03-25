@@ -47,6 +47,14 @@ export const About: React.FC = () => {
                 <p>
                   Muitos profissionais tentam encaixar o paciente em uma única abordagem. Minha prática clínica vai na contramão: utilizo uma <strong>metodologia integrativa</strong> que personaliza o processo para a complexidade da sua história.
                 </p>
+                <div>
+                  <a
+                    href="#metodo"
+                    className="inline-flex items-center text-base font-medium text-brand-primary hover:text-brand-dark transition-colors"
+                  >
+                    Ver as 3 fases da metodologia
+                  </a>
+                </div>
                 <p>
                   Sou Sabrina Gonzalez (<strong className="text-brand-dark">CRP 06/118764</strong>). Graduada pela Faculdade de Ciências Médicas da Santa Casa de SP e pós-graduada em Psicologia Clínica pelo CEPSIC/HC-USP.
                 </p>

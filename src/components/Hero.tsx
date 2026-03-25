@@ -6,17 +6,17 @@ import { openTypebot } from '../lib/typebot';
 
 export const Hero: React.FC = () => {
     return (
-        <section className="section-shell-tight relative min-h-[80vh] sm:min-h-[86vh] lg:min-h-[84vh] flex items-center bg-brand-light overflow-hidden">
+        <section className="relative flex items-center overflow-hidden bg-brand-light py-10 sm:py-14 md:py-20 lg:py-24 min-h-0 sm:min-h-[86vh] lg:min-h-[84vh]">
 
             {/* Decorative Background Elements */}
             <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-white/60 to-transparent -skew-x-12 translate-x-1/3 z-0"></div>
             <div className="absolute top-1/2 left-0 w-[380px] h-[380px] md:w-[600px] md:h-[600px] bg-brand-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none animate-pulse duration-[5000ms]"></div>
 
-            <div className="section-container relative z-10 pt-10 sm:pt-14 md:pt-20">
-                <div className="surface-soft p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col-reverse lg:flex-row items-center gap-7 md:gap-10 lg:gap-16">
+            <div className="section-container relative z-10">
+                <div className="surface-soft p-5 sm:p-8 md:p-10 lg:p-12 flex flex-col-reverse lg:flex-row items-center gap-6 md:gap-10 lg:gap-16">
 
                     {/* Content */}
-                    <div className="w-full lg:w-3/5 space-y-6 md:space-y-8 animate-fade-in-up">
+                    <div className="w-full lg:w-3/5 space-y-5 md:space-y-8 animate-fade-in-up">
 
                         {/* Branding / Identity Block */}
                         <div className="flex flex-col items-start gap-1 mb-2">
@@ -36,15 +36,29 @@ export const Hero: React.FC = () => {
                             Saia do ciclo de exaustão e reconstrua o <span className="italic text-brand-primary font-light">sentido</span> da sua vida.
                         </h1>
 
-                        <p className="text-lg md:text-xl text-brand-slate max-w-lg leading-relaxed border-l border-brand-primary/30 pl-8">
+                        <p className="text-lg md:text-xl text-brand-slate max-w-lg leading-relaxed border-l border-brand-primary/30 pl-6 md:pl-8">
                             Uma abordagem integrativa que une Logoterapia, Neurociência e Filosofia para quem busca mais do que apenas "funcionar".
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-5 pt-2">
-                            <Button onClick={openTypebot} className="gap-3 shadow-2xl shadow-stone-900/20">
+                        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                            <Button onClick={openTypebot} className="gap-3 shadow-2xl shadow-stone-900/20 w-full sm:w-auto">
                                 <MessageCircle size={18} strokeWidth={2.5} />
-                                Agendar Sessão
+                                Agendar Sessão Online
                             </Button>
+                            <Button href="#faq" variant="outline" className="w-full sm:w-auto">
+                                Ver dúvidas frequentes
+                            </Button>
+                        </div>
+                        <p className="text-sm text-brand-slate/90">
+                            Atendimento 100% online, com sessões de 50 minutos e sigilo profissional.
+                        </p>
+                        <div className="pt-1">
+                            <a
+                                href="#metodo"
+                                className="inline-flex items-center text-sm font-medium text-brand-primary hover:text-brand-dark transition-colors"
+                            >
+                                Entenda como funciona a metodologia
+                            </a>
                         </div>
                     </div>
 
@@ -54,7 +68,7 @@ export const Hero: React.FC = () => {
                             <img
                                 src={heroImage}
                                 alt="Ambiente terapêutico acolhedor"
-                                className="protected-media w-full h-full object-cover sepia-[0.05] contrast-[0.95] hover:scale-110 transition-transform duration-[2s]"
+                                className="protected-media w-full h-full object-cover sepia-[0.05] contrast-[0.95]"
                                 loading="eager"
                                 fetchPriority="high"
                                 draggable={false}
